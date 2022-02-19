@@ -1,3 +1,5 @@
 /.idea/
 /eureka-server/target/
 /api-gateway/target/
+/setup/target/
+/game-review/target/

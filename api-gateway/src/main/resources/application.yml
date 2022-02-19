@@ -4,7 +4,13 @@ server:
 spring:
   application:
     name: api-gateway
-    #TODO: ADICIONAR ROTAS PARA GERENCIAMENTO VIA APIGTW
+  cloud:
+    gateway:
+      routes:
+        - id: game-review
+          uri: lb://GAME-REVIEW
+          predicates:
+            - Path=/api/v1/game/review/**
 
 eureka: #Mapeia o eureka server para o cliente.
   client:

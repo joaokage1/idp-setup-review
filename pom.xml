@@ -11,6 +11,7 @@
     <modules>
         <module>eureka-server</module>
         <module>api-gateway</module>
+        <module>game-review</module>
     </modules>
 
     <properties>
