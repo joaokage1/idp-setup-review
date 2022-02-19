@@ -1,0 +1,12 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: api-gateway
+    #TODO: ADICIONAR ROTAS PARA GERENCIAMENTO VIA APIGTW
+
+eureka: #Mapeia o eureka server para o cliente.
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
