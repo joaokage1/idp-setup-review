@@ -1,0 +1,11 @@
+server:
+  port: 8761
+
+eureka:
+  client:
+    fetch-registry: false #Eureka clients fetches the registry information from the server and caches it locally.
+    register-with-eureka: false
+
+spring:
+  application:
+    name: eureka-server
