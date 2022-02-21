@@ -1,0 +1,14 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: validation-reviewer
+  data:
+    mongodb:
+      uri: mongodb://jogomes:1234@localhost:27017/validationreviewer
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka

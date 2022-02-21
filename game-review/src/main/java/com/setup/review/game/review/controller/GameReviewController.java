@@ -21,7 +21,7 @@ public record GameReviewController(GameReviewService gameReviewService) {
         return ResponseEntity.ok(gameReviewService.registerGameReview(request));
     }
 
-    @GetMapping("/{email}")
+    @GetMapping(path = "/{email}")
     public ResponseEntity<String> fetchReviewNumberFromEmail(@PathVariable String email) {
         log.info("Searching all the reviews from {}", email);
 

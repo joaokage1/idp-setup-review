@@ -23,7 +23,7 @@ public class GameReviewService {
                 .description(request.description())
                 .email(request.email()).build();
 
-        //TODO: Checar se o email já chegou no limite de 10 reviews de games.
+        //TODO: Checar se o email é válido.
         //TODO: Enviar notificação para o reviewer.
 
         repository.save(gameReview);
