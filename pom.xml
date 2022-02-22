@@ -13,6 +13,7 @@
         <module>api-gateway</module>
         <module>game-review</module>
         <module>valid-reviewer</module>
+        <module>clients</module>
     </modules>
 
     <properties>
@@ -47,6 +48,10 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.20</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
     </dependencies>
 

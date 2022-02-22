@@ -4,7 +4,7 @@ import com.setup.review.game.validation.reviewer.model.ValidationReviewer;
 import com.setup.review.game.validation.reviewer.repository.ValidationReviewerRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import net.javacrumbs.shedlock.core.SchedulerLock;
+import net.javacrumbs.shedlock.spring.annotation.SchedulerLock;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
@@ -41,7 +41,7 @@ public class ValidationReviewerService {
 
     @Scheduled(cron = "0 0/2 * * * *")
     @SchedulerLock(name = "todosEmailsVerificados",
-            lockAtLeastForString = "PT5S", lockAtMostForString = "PT10M")
+            lockAtLeastFor = "5S", lockAtMostFor = "10M")
     public void scheduledTask() {
         List<String> validationReviewerList = validationReviewerRepository.findAll().stream().map(validationReviewer -> validationReviewer.getEmail()).toList();
         log.info("Todos os emails verificados: {}", validationReviewerList);

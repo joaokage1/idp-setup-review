@@ -21,5 +21,6 @@ public class GameReview {
     private String gameName;
     private Long score;
     private String description;
+    private Boolean isValidEmail;
 
 }
