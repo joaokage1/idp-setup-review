@@ -14,6 +14,8 @@
         <module>game-review</module>
         <module>valid-reviewer</module>
         <module>clients</module>
+        <module>notification</module>
+        <module>amqp</module>
     </modules>
 
     <properties>

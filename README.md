@@ -29,10 +29,11 @@ assim de vez o tão usado RestTemplate. Possui grande interação com os outros 
 uma configuração padrão, que combinada com Eureka server, pode ser de grande benefício o uso de sua funcionalidade,
 já com o loadBalancer padrão configurado.
 
-## **EXTRAS**
-
 ### **DOCKER - MONGO DB**
 >docker run --name mongodb -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=joao -e MONGO_INITDB_ROOT_PASSWORD=pass mongo
+
+### **DOCKER - RABBIT MQ**
+>docker run --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.9.11-management-alpine
 
 ### **Scheduling Tasks**
 Apenas para demonstração, foi utilizado um método agendado, com a utiliação tambmém de um lock, pois uma

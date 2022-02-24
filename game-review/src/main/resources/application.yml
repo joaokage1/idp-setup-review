@@ -7,6 +7,8 @@ spring:
   data:
     mongodb:
       uri: mongodb://jogomes:1234@localhost:27017/gamereview
+  rabbitmq:
+    addresses: localhost:5672
 
 eureka:
   client:

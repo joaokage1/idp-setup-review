@@ -5,3 +5,5 @@
 /game-review/target/
 /valid-reviewer/target/
 /clients/target/
+/amqp/target/
+/notification/target/

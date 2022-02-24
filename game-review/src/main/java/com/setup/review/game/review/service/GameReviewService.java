@@ -1,5 +1,7 @@
 package com.setup.review.game.review.service;
 
+import com.setup.review.amqp.RabbitMQMessageProducer;
+import com.setup.review.clients.notification.NotificationRequest;
 import com.setup.review.clients.valid.reviewer.IValidReviewerClient;
 import com.setup.review.game.review.dto.GameReviewRequest;
 import com.setup.review.game.review.dto.GameReviewResponse;
@@ -16,6 +18,7 @@ public class GameReviewService {
 
     private final GameReviewRepository repository;
     private final IValidReviewerClient validReviewerClient;
+    private final RabbitMQMessageProducer rabbitMQMessageProducer;
 
     public GameReviewResponse registerGameReview(GameReviewRequest request){
 
@@ -31,12 +34,23 @@ public class GameReviewService {
         //TODO: Enviar notificação para o reviewer.
 
         repository.save(gameReview);
+        log.info(String.format("Saved review of: %s from: %s", gameReview.getGameName(), gameReview.getEmail()));
 
         if (!validEmail) {
             throw new IllegalStateException("Email not valid");
         }
 
-        log.info(String.format("Saved review of: %s from: %s", gameReview.getGameName(), gameReview.getEmail()));
+        NotificationRequest notificationRequest = new NotificationRequest(
+                gameReview.getEmail(),
+                String.format("Hi %s, welcome to Game Review...",
+                        gameReview.getEmail())
+        );
+
+        rabbitMQMessageProducer.publish(
+                notificationRequest,
+                "internal.exchange",
+                "internal.notification.routing-key"
+        );
 
         return new GameReviewResponse("Thank you for your review!!");
     }
