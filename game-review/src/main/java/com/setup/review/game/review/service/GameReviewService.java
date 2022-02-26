@@ -22,7 +22,6 @@ public class GameReviewService {
 
     public GameReviewResponse registerGameReview(GameReviewRequest request){
 
-        repository.deleteAll();
         GameReview gameReview = GameReview.builder()
                 .gameName(request.gameName())
                 .email(request.gameName())

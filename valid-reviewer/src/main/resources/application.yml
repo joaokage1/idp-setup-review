@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: validation-reviewer
+  zipkin:
+    base-url: http://localhost:9411
   data:
     mongodb:
       uri: mongodb://jogomes:1234@localhost:27017/validationreviewer

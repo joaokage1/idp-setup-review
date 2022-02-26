@@ -7,6 +7,10 @@ O conteúdo aprendido servirá de extrema importância para o andamento das ativ
 
 ### **Seção 1 - Eureka Server**
 
+<div>
+    <img src="https://user-images.githubusercontent.com/34372105/155847668-ccf30b12-114c-4e5c-848a-22f719c879a5.PNG" width="700">
+</div>
+
 O Netflix Eureka é um módulo do Netflix OSS, o qual permite com que serviços sejam registrados através do 
 Eureka Server e descobertos através do Eureka Client, facilitando esse controle de aplicação distribuída.
 
@@ -29,11 +33,25 @@ assim de vez o tão usado RestTemplate. Possui grande interação com os outros 
 uma configuração padrão, que combinada com Eureka server, pode ser de grande benefício o uso de sua funcionalidade,
 já com o loadBalancer padrão configurado.
 
+### **Seção 4 - Zipkin**
+
+<div>
+    <img src="https://user-images.githubusercontent.com/34372105/155847577-7750cc5b-9b88-4dcd-ae76-3b4a81d34f5d.PNG" width="700">
+</div>
+
+Zipkin é um sistema de rastreamento distribuído. Ele ajuda a reunir os dados de tempo necessários para solucionar 
+problemas de latência em arquiteturas de serviço. Os recursos incluem a coleta e a pesquisa desses dados.
+
+## **EXTRAS**
+
 ### **DOCKER - MONGO DB**
 >docker run --name mongodb -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=joao -e MONGO_INITDB_ROOT_PASSWORD=pass mongo
 
 ### **DOCKER - RABBIT MQ**
 >docker run --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.9.11-management-alpine
+
+### **DOCKER - Zipkin**
+>docker run -d -p 9411:9411 openzipkin/zipkin
 
 ### **Scheduling Tasks**
 Apenas para demonstração, foi utilizado um método agendado, com a utiliação tambmém de um lock, pois uma
