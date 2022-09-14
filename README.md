@@ -45,7 +45,7 @@ problemas de latência em arquiteturas de serviço. Os recursos incluem a coleta
 ## **EXTRAS**
 
 ### **DOCKER - MONGO DB**
->docker run --name mongodb -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=joao -e MONGO_INITDB_ROOT_PASSWORD=pass mongo
+>docker run --name mongodb -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=jogomes -e MONGO_INITDB_ROOT_PASSWORD=1234 mongo
 
 ### **DOCKER - RABBIT MQ**
 >docker run --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.9.11-management-alpine
